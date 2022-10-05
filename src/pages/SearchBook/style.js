@@ -29,7 +29,7 @@ export const Container = styled('div', {
             borderBottomLeftRadius: '8px',
             paddingLeft: '5px',
 
-            '&:focus':{
+            '&:focus': {
                 outline: 'none'
             }
         },
@@ -67,25 +67,32 @@ export const Book = styled('div', {
         border: 'none',
         cursor: 'pointer',
         marignTop: '5px'
+    },
+
+    '& p': {
+        cursor: 'default'
     }
 })
 
 export const BookImg = styled('img', {
     width: '128px',
     height: '187px',
-    border: '1px solid'
+    padding: '6px',
+    background: '$alert',
+    borderRadius: '5px',
+    marginBottom: '8px',
 })
 
 export const FavoriteImg = styled('img', {
     width: '30px',
 
 
-    '&:hover':{
+    '&:hover': {
         animation: `${scaleUp} 200ms`,
         animationFillMode: 'forwards'
     },
 
-    '&:not( :hover )':{
+    '&:not( :hover )': {
         animation: `${scaledown} 200ms`,
         animationFillMode: 'forwards'
     }
@@ -94,15 +101,15 @@ export const FavoriteImg = styled('img', {
 
 export const BookImgContainer = styled('div', {
     display: 'inherit',
-    
-    '& img':{
+
+    '& img': {
         width: '700px'
     },
 
     variants: {
         size: {
             bp1: {
-                '& img':{
+                '& img': {
                     width: '100%'
                 }
             }
@@ -127,7 +134,7 @@ export const ContainerBooks = styled('div', {
                 flexDirection: 'column',
                 alignItems: 'center',
 
-                [`& ${Book}`]:{
+                [`& ${Book}`]: {
                     width: '250px'
                 },
 

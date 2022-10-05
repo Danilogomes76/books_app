@@ -8,13 +8,11 @@ export const Booksadded = styled('div', {
     margin: '10px',
 
     '& tr': {
-        outline: '2px solid',
         textAlign: 'center'
     },
 
     '& td': {
         outline: '2px solid',
-        padding: '0px 10px'
     },
 
     '& input': {
@@ -71,6 +69,8 @@ export const TdBookTitle = styled('td', {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: '10px',
+
     '& img': {
         width: '64px',
         height: '94px',
@@ -89,13 +89,13 @@ export const TdBtnBox = styled('td', {
         border: '1px solid',
         paddingLeft: '2px',
         paddingRight: '2px',
-        backgroundColor: 'red',
+        backgroundColor: '$blood_800',
         color: 'white',
         cursor: 'pointer',
         width: '100%',
 
         '&:hover': {
-            background: '#bc1515'
+            background: '$blood_900'
         }
     }
 })

@@ -24,7 +24,6 @@ function Home() {
       }
       notify()
     }
-    console.log(state)
   }
 
   return (

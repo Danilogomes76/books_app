@@ -16,7 +16,7 @@ export default function reducer(state = [], action) {
             const author = action.payload.author
 
             if (name && author) {
-                
+
                 const index = state.findIndex(value => value.name == name)
 
                 const booksave = new bookClass(name, author, noImg)
@@ -40,14 +40,14 @@ export default function reducer(state = [], action) {
         case 'FAVORITE':
             const bookName = action.payload[0]
             const authorName = action.payload[1] == undefined ? 'No author name' : action.payload[1][0]
-
             const thumbnail = action.payload[2] || noImg
-    
+            const id = action.payload[3]
+
             if (bookName && authorName) {
 
                 let index = state.findIndex(value => value.name == bookName)
-                
-                const booksave = new bookClass(bookName, authorName, thumbnail)
+
+                const booksave = new bookClass(bookName, authorName, thumbnail, id)
 
                 if (state.length == 0) {
                     state = [...state, booksave]
@@ -60,6 +60,7 @@ export default function reducer(state = [], action) {
                     localStorage.setItem(SAVED_ITEMS, JSON.stringify(state))
                     return state
                 }
+                
             }
         default:
             return state
