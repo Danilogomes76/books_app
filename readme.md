@@ -1,6 +1,9 @@
-<img src='https://img.shields.io/github/issues/Danilogomes76/books_app'/>
-<img src='https://img.shields.io/github/forks/Danilogomes76/books_app'/>
-<img src='https://img.shields.io/github/stars/Danilogomes76/books_app'/>
+<div>
+    <img src='https://img.shields.io/github/issues/Danilogomes76/books_app'/>
+    <img src='https://img.shields.io/github/forks/Danilogomes76/books_app'/>
+    <img src='https://img.shields.io/github/stars/Danilogomes76/books_app'/>
+  
+</div>
 
 <h1>App to organize books</h1>
 
