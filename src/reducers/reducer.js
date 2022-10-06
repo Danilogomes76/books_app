@@ -38,11 +38,11 @@ export default function reducer(state = [], action) {
             localStorage.setItem(SAVED_ITEMS, JSON.stringify(state))
             return state
         case 'FAVORITE':
-            const bookName = action.payload[0]
-            const authorName = action.payload[1] == undefined ? 'No author name' : action.payload[1][0]
-            const thumbnail = action.payload[2] || noImg
-            const id = action.payload[3]
-
+            const bookName = action.payload.title
+            const authorName = action.payload.author[0]
+            const thumbnail = action.payload.thumbnail || noImg
+            const id = action.payload.id
+           
             if (bookName && authorName) {
 
                 let index = state.findIndex(value => value.name == bookName)

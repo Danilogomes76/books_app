@@ -20,16 +20,21 @@ function SearchBook() {
         const notify = () => toast(`"${book.volumeInfo.title}", foi adicionado a sua lista.`);
         const bookConfirm = state.find(value => value.id.includes(book.id))
         const thumbnail =  book.volumeInfo.imageLinks ?  book.volumeInfo.imageLinks.smallThumbnail : undefined
-        dispatch({ type: 'FAVORITE', payload: [book.volumeInfo.title, book.volumeInfo.authors, thumbnail, book.id] })
+        dispatch({ type: 'FAVORITE', payload: {
+            title: book.volumeInfo.title,
+            author: book.volumeInfo.authors,
+            thumbnail,
+            id: book.id
+        } })
         if(!bookConfirm){
             notify()
         }
     }
 
-    async function submit() {
+    function submit() {
         const name = search.replace(/ /g, "")
         if (search.length > 0) {
-            let url = await `https://www.googleapis.com/books/v1/volumes?q=${name}`
+            let url = `https://www.googleapis.com/books/v1/volumes?q=${name}`
             axios.get(url)
                 .then(response => {
                     response.data.totalItems ? setData(response.data.items) : []
