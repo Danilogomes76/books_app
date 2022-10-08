@@ -29,9 +29,15 @@
     <li><a href="https://axios-http.com/ptbr/docs/intro">Axios</a> - for API consumption.</li>
 </ul>
 
-<h2 align="center">Preview from App:</h2>
+<h2 align="center">🎨 Preview from App:</h2>
 <br>
 <img alt="NextLevelWeek" title="#NextLevelWeek" src="./src/assets/github/previewGif.gif" />
+<br><br>
+<div align="center">
+    <h2 align="center">🎨 Preview from Mobile:</h2>
+    <img style="width: 200px; padding: 20px" alt="NextLevelWeek" title="#NextLevelWeek" src="./src/assets/github/mobile_gif_1.gif" />
+    <img style="width: 200px; padding: 20px" alt="NextLevelWeek" title="#NextLevelWeek" src="./src/assets/github/mobile_gif_2.gif" />
+</div>
 <br><br>
 <h1>Author</h1>
 
