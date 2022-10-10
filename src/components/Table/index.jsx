@@ -51,7 +51,6 @@ function TableBooks() {
                                             </TdBookTitle>
                                             <TdBtnBox>
                                                 {b.author}
-                                                {/* <button onClick={() => remove(b)}>Remove</button> */}
                                                 <AlertRemove removeFC={remove} livro={b}/>
                                             </TdBtnBox>
                                         </Tritem>

@@ -17,7 +17,7 @@ function SearchBook() {
     const [data, setData] = useState([])
 
     function favorite(book) {
-        const notify = () => toast(`"${book.volumeInfo.title}", foi adicionado a sua lista.`);
+        const notify = () => toast(`"${book.volumeInfo.title}", foi adicionado a sua lista.` || '');
         const bookConfirm = state.find(value => value.id.includes(book.id))
         const thumbnail =  book.volumeInfo.imageLinks ?  book.volumeInfo.imageLinks.smallThumbnail : undefined
         dispatch({ type: 'FAVORITE', payload: {
