@@ -8,30 +8,26 @@ import Books from './Books'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import daeneryImg from '../../assets/daenerys.svg'
+import { favoriteBook } from '../../actions/action';
 
 function SearchBook() {
     const dispatch = useDispatch()
     const state = useSelector((state) => { return state.saveOrDelete })
-    
+
     const [search, setSearch] = useState('')
     const [data, setData] = useState([])
 
     function favorite(book) {
         const notify = () => toast(`"${book.volumeInfo.title}", foi adicionado a sua lista.` || '');
         const bookConfirm = state.find(value => value.id.includes(book.id))
-        const thumbnail =  book.volumeInfo.imageLinks ?  book.volumeInfo.imageLinks.smallThumbnail : undefined
-        dispatch({ type: 'FAVORITE', payload: {
-            title: book.volumeInfo.title,
-            author: book.volumeInfo.authors,
-            thumbnail,
-            id: book.id
-        } })
-        if(!bookConfirm){
+        const thumbnail = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : undefined
+        dispatch(favoriteBook(book.volumeInfo.title, book.volumeInfo.authors, thumbnail, book.id))
+        if (!bookConfirm) {
             notify()
         }
     }
 
-    function submit() {
+    async function submit() {
         const name = search.replace(/ /g, "")
         if (search.length > 0) {
             let url = `https://www.googleapis.com/books/v1/volumes?q=${name}`
@@ -52,7 +48,7 @@ function SearchBook() {
             {data.length != 0 ? (
                 <Books favoriteFc={favorite} data={data} />
             ) :
-                <BookImgContainer size={{'@bp1': 'bp1'}}>
+                <BookImgContainer size={{ '@bp1': 'bp1' }}>
                     <img src={daeneryImg} alt='bookIcon'></img>
                 </BookImgContainer>
             }

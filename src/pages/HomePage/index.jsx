@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import bookImg from '../../assets/book.png'
+import { saveBook } from '../../actions/action';
 
 function Home() {
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ function Home() {
   function save() {
     const notify = () => toast(`"${name}", foi adicionado a sua lista.`);
     const bookConfirm = state.find(value => value.name.includes(name))
-    dispatch({ type: 'SAVE', payload: { name, author } })
+    dispatch(saveBook(name, author))
     if (!bookConfirm) {
       if(name.length == 0){
         return 
