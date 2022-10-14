@@ -13,7 +13,7 @@ import {
 
 function TableBooks() {
   const dispatch = useDispatch();
-  let state = useSelector((state) => {return state.saveOrDelete;});
+  let state = useSelector((state) => { return state.saveOrDelete; });
   const [search, setSearch] = useState("");
   const filtredBooks = search.length > 0 ? state.filter((books) => books.name.includes(search)) : [];
 
@@ -22,14 +22,14 @@ function TableBooks() {
   return (
     <>
       <Booksadded size={{ "@bp1": "bp1" }}>
-      {/* <input
+        <input
           type="text"
           placeholder="Book name"
           onChange={(e) => {
             setSearch(e.target.value);
           }}
           value={search}
-        ></input> */}
+        ></input>
         <Table>
           <thead>
             <Trtittle>
