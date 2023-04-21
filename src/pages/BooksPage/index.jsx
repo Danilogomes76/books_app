@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import noBooks from '../../assets/nobooks.png';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import TableBooks from '../../components/Table';
-import Footer from '../../components/Footer';
 import { Container, NoBooksContainer } from './styles';
-import noBooks from '../../assets/noBooks.png'
 
 function Books() {
 
