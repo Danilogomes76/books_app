@@ -7,6 +7,7 @@
 
 <h1>App to organize books</h1>
 
+
 <h2 align='center'>Application to organize your books that consumes the Google Books API.</h2>
 <br>
 <p align='center'>This app was made in order to train my skills in React/Vite.</p>
@@ -31,6 +32,7 @@
 
 <div align="center">
     <h2 align="center">🎨 Preview from App:</h2>
+    <p>https://book-organize.vercel.app</p>
     <img alt="DesktopPreview" title="DesktopPreview" src="./src/assets/github/previewGif.gif" />
 </div>
 <br>
